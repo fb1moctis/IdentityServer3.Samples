@@ -54,6 +54,7 @@ namespace WpfClient
             var client = new OAuth2Client(new Uri(Constants.AuthorizeEndpoint));
             var startUrl = client.CreateAuthorizeUrl(
                 clientId: "hybridclient",
+                //clientId: "7b3e70c3-32f7-4b32-82b9-93260ff47b47",
                 responseType: responseType,
                 scope: scope,
                 redirectUri: "oob://localhost/wpfclient",
@@ -70,14 +71,25 @@ namespace WpfClient
             {
                 var client = new OAuth2Client(
                     new Uri(Constants.TokenEndpoint),
-                    "hybridclient",
-                    "secret");
+                    "hybridclient", "secret");
+                    //"7b3e70c3-32f7-4b32-82b9-93260ff47b47",
+                    //"", OAuth2Client.ClientAuthenticationStyle.PostValues);
 
                 var response = await client.RequestAuthorizationCodeAsync(
                     _response.Code,
                     "oob://localhost/wpfclient");
 
-                Textbox1.Text = response.Json.ToString();
+                try
+                {
+                    //dynamic obj = response.Json;                    
+                    Textbox1.Text = response.Json.ToString();
+                    //_response.Values["access_token"] = "xx." + obj.access_token;
+                }
+                catch (Exception ex)
+                {
+                    Textbox1.Text = ex.Message;
+                }
+                
             }
         }
 
@@ -97,8 +109,9 @@ namespace WpfClient
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                var json = await response.Content.ReadAsStringAsync();
+                var json = await response.Content.ReadAsStringAsync();                
                 Textbox1.Text = JObject.Parse(json).ToString();
+                
             }
             else
             {
@@ -122,6 +135,7 @@ namespace WpfClient
             {
                 var viewer = new IdentityTokenViewer();
                 viewer.IdToken = _response.Values["access_token"];
+                //viewer.AccessToken = _response.Values["access_token"];
                 viewer.Show();
             }
         }

@@ -10,14 +10,15 @@
         <Button Content="Login with all Claims" x:Name="LoginWithAllClaimsButton" HorizontalAlignment="Left" Margin="90,35,0,0" VerticalAlignment="Top" Width="119" Click="LoginWithAllClaimsButton_Click" />
         <Button Content="Login with Profile and Access Token" x:Name="LoginWithProfileAndAccessTokenButton" HorizontalAlignment="Left" Margin="214,10,0,0" VerticalAlignment="Top" Width="211" Click="LoginWithProfileAndAccessTokenButton_Click" />
         <Button Content="Profile, Roles and Access Token" x:Name="LoginWithProfileRolesAndAccessTokenButton" HorizontalAlignment="Left" Margin="214,35,0,0" VerticalAlignment="Top" Width="211" Click="LoginWithProfileRolesAndAccessTokenButton_Click" />
-        
+
         <Button Content="Access Token only" x:Name="AccessTokenOnlyButton" HorizontalAlignment="Left" Margin="430,10,0,0" VerticalAlignment="Top" Width="133" Click="AccessTokenOnlyButton_Click" />
         <Button Content="IdentityManager" x:Name="IdentityManager" HorizontalAlignment="Left" Margin="430,35,0,0" VerticalAlignment="Top" Width="133" Click="IdentityManager_Click" />
-        <Button Content="Call UserInfo Endpoint" x:Name="CallUserInfo" HorizontalAlignment="Left" Margin="577,264,0,0" VerticalAlignment="Top" Width="133" Click="CallUserInfo_Click" Height="33" />
+        <Button Content="Call UserInfo Endpoint" x:Name="CallUserInfo" HorizontalAlignment="Left" Margin="577,301,0,0" VerticalAlignment="Top" Width="133" Click="CallUserInfo_Click" Height="33" />
 
         <Button Content="Show IdToken" x:Name="ShowIdTokenButton" HorizontalAlignment="Left" Margin="577,109,0,0" VerticalAlignment="Top" Width="133" Height="33" Click="ShowIdTokenButton_Click"/>
         <Button Content="Show Access Token" x:Name="ShowAccessTokenButton" HorizontalAlignment="Left" Margin="577,147,0,0" VerticalAlignment="Top" Width="133" Height="33" Click="ShowAccessTokenButton_Click" />
-        <Button Content="Call Service" x:Name="CallServiceButton" HorizontalAlignment="Left" Margin="577,226,0,0" VerticalAlignment="Top" Width="133" Height="33" Click="CallServiceButton_Click" />
-        <Button Content="Validate IdToken" x:Name="ValidateIdTokenButton" HorizontalAlignment="Left" Margin="577,302,0,0" VerticalAlignment="Top" Width="133" Height="33" Click="ValidateIdTokenButton_Click" />
+        <Button Content="Call REST Service" x:Name="CallServiceButton" HorizontalAlignment="Left" Margin="577,263,0,0" VerticalAlignment="Top" Width="133" Height="33" Click="CallServiceButton_Click" />
+        <Button Content="Validate IdToken" x:Name="ValidateIdTokenButton" HorizontalAlignment="Left" Margin="577,339,0,0" VerticalAlignment="Top" Width="133" Height="33" Click="ValidateIdTokenButton_Click" />
+        <Button Content="Call WCF Service" x:Name="CallWCFServiceButton" HorizontalAlignment="Left" Margin="577,225,0,0" VerticalAlignment="Top" Width="133" Height="33" Click="CallWcfServiceButton_Click" />
     </Grid>
 </Window>

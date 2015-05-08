@@ -27,5 +27,16 @@ namespace WpfClient
                 Text.Text = jwt.ToString();
             }
         }
+
+        public string AccessToken
+        {
+            set
+            {
+                var token = value; 
+                var part = Encoding.UTF8.GetString(Base64Url.Decode(token));
+                var jwt = JObject.Parse(part);
+                Text.Text = jwt.ToString();
+            }
+        }
     }
 }

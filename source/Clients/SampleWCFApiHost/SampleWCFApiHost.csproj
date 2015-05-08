@@ -71,6 +71,7 @@
     <Compile Include="CustomToken\CustomTokenParameters.cs" />
     <Compile Include="CustomToken\CustomTokenProvider.cs" />
     <Compile Include="CustomToken\CustomTokenServiceCredentials.cs" />
+    <Compile Include="IAuthorizationProvider.cs" />
     <Compile Include="IService1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,7 +85,9 @@
     <None Include="configuration\tracing.Debug.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

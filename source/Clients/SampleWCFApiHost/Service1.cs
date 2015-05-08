@@ -1,7 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Claims;
+using System.IdentityModel.Policy;
 using System.ServiceModel;
+using System.Threading;
+
+using Microsoft.IdentityModel.Claims;
+
+using Claim = System.IdentityModel.Claims.Claim;
 
 namespace SampleWCFApiHost
 {
@@ -9,9 +15,11 @@ namespace SampleWCFApiHost
     {
         public string GetIdentityData()
         {
+            var id = "";
+                        
             var claims = ServiceSecurityContext.Current.AuthorizationContext.ClaimSets;
-
-            string result = "";
+              
+            string result = string.Format("Thread.CurrentPrincipal.Identity.Name = {0}\n", id);
             foreach (ClaimSet claimSet in claims)
             {                
                 foreach(System.IdentityModel.Claims.Claim claim in claimSet)

@@ -2,6 +2,9 @@
 using Owin;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens;
+
+using Sample;
+
 using Thinktecture.IdentityServer.AccessTokenValidation;
 
 [assembly: OwinStartup(typeof(SampleAspNetWebApi.Startup))]
@@ -16,7 +19,7 @@ namespace SampleAspNetWebApi
 
             app.UseIdentityServerBearerTokenAuthentication(new IdentityServerBearerTokenAuthenticationOptions
                 {
-                    Authority = "https://localhost:44333/core",
+                    Authority = Constants.BaseAddress,
                     RequiredScopes = new[] { "write" }
                 });
 

@@ -23,11 +23,11 @@ namespace CustomJwtSecurityTokenHandler
             var validationParameters = new TokenValidationParameters
             {
                 // Get the audiences that are expected.
-                ValidAudiences = new string[] {"https://idsrv3.com/resources"},
+                ValidAudiences = new string[] { "urn:webwcf", "https://openid-draycir.azurewebsites.net/core/resources" },
 
                 // Get the issuer that are expected.
                 //ValidIssuers = issuingAuthority.Issuers,
-                ValidIssuers = new List<string> { "https://idsrv3.com" },
+                ValidIssuers = new List<string> { "https://openid-draycir.azurewebsites.net/core" },
 
                 // Get the certificate to validate signing from the certificate store (if configured).
                 IssuerSigningKey = new X509SecurityKey(Certificate.Get()),

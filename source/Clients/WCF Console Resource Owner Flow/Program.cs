@@ -21,7 +21,7 @@ using Thinktecture.IdentityModel.Extensions;
 
 namespace WCF_Console_Resource_Owner_Flow
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -33,7 +33,7 @@ namespace WCF_Console_Resource_Owner_Flow
             CallServiceCustomToken(response.AccessToken);
         }
 
-        static Binding CreateCustomTokenBinding()
+        public static Binding CreateCustomTokenBinding()
         {
             HttpTransportBindingElement httpTransport = new HttpTransportBindingElement();
 
